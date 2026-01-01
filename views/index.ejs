@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Football</title>
+    <title>Premier League season 2025-2026</title>
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
@@ -12,15 +12,17 @@
 
     <link href="styles/main.css" rel="stylesheet" />
   </head>
-
+  <%# used bootstrap for responsiveness %> <%# Each team has a crest , stadium ,
+  coach , official website %>
   <body>
     <div class="container">
       <div class="row">
         <h2 class="mb-5 pb-4 pt-4 text-center">
           Premier League clubs Season 2025/26
         </h2>
-
-        <% response.forEach(team => { %>
+        <%# forEach is used for looping through the array of teams and entering
+        each team and loading its required data %> <% response.forEach(team => {
+        %>
         <div class="col-md-4 mb-4">
           <div class="card align-items-center col-md-6">
             <img
