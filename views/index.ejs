@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Football</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link href="styles/main.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <h2 class="mb-5 pb-4 pt-4 text-center">
+          Premier League clubs Season 2025/26
+        </h2>
+
+        <% response.forEach(team => { %>
+        <div class="col-md-4 mb-4 ">
+          <div class="card align-items-center col-md-6">
+            <img
+              class="card-img-top"
+              src="<%= team.crest %>"
+              alt="<%= team.name %> logo"
+            />
+
+            <div class="card-body text-center">
+              <h5 class="card-title club-name"><%= team.name %></h5>
+
+              <p class="card-text">
+                Founded: <span><%= team.founded %></span><br />
+                Stadium: <span><%= team.venue %></span>
+              </p>
+
+              <p class="card-text">
+                Managed by:
+                <span><%= team.coach.lastName %></span>
+              </p>
+
+              <a
+                href="<%= team.website %>"
+                class="btn btn-primary"
+                target="_blank"
+              >
+                Official website
+              </a>
+            </div>
+          </div>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+  </body>
+</html>
